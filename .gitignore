@@ -1,10 +1,12 @@
-﻿backend/target/
+backend/target/
 frontend/dist/
 frontend/node_modules/
 python-ai-service/.venv/
 python-ai-service/__pycache__/
 python-ai-service/.pytest_cache/
 python-ai-service/.env
+python-ai-service/**/*.pyc
+python-ai-service/**/__pycache__/
 .idea/
 *.iml
 .DS_Store
