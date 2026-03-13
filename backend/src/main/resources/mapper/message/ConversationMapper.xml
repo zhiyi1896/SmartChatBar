@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.niu.community.message.mapper.ConversationMapper">
+    <select id="selectConversations" resultType="map">
+        SELECT c.id AS conversationId,
+               CASE WHEN c.user1_id = #{userId} THEN c.user2_id ELSE c.user1_id END AS userId,
+               u.nickname AS userName,
+               u.avatar AS userAvatar,
+               c.last_message AS lastMessage,
+               c.last_message_time AS lastMessageTime,
+               CASE WHEN c.user1_id = #{userId} THEN c.unread_count_user1 ELSE c.unread_count_user2 END AS unreadCount
+        FROM conversation c
+        JOIN user u ON u.id = CASE WHEN c.user1_id = #{userId} THEN c.user2_id ELSE c.user1_id END
+        WHERE c.user1_id = #{userId} OR c.user2_id = #{userId}
+        ORDER BY c.last_message_time DESC
+        LIMIT #{offset}, #{pageSize}
+    </select>
+</mapper>

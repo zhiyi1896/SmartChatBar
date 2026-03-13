@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.niu.community.post.mapper.PostMapper">
+    <select id="selectPostListWithUser" resultType="map">
+        SELECT p.id,
+               p.user_id,
+               p.title,
+               p.content,
+               p.view_count,
+               p.like_count,
+               p.comment_count,
+               p.create_time,
+               u.nickname AS user_nickname,
+               u.avatar AS user_avatar
+        FROM post p
+        LEFT JOIN user u ON p.user_id = u.id
+        WHERE p.status = 1
+        <if test="userId != null">
+            AND p.user_id = #{userId}
+        </if>
+        <if test="keyword != null and keyword != ''">
+            AND (p.title LIKE CONCAT('%', #{keyword}, '%') OR p.content LIKE CONCAT('%', #{keyword}, '%'))
+        </if>
+        ORDER BY p.is_top DESC, p.create_time DESC
+        LIMIT #{offset}, #{pageSize}
+    </select>
+
+    <select id="selectPostDetailWithUser" resultType="map">
+        SELECT p.id,
+               p.user_id,
+               p.title,
+               p.content,
+               p.view_count,
+               p.like_count,
+               p.comment_count,
+               p.create_time,
+               u.nickname AS user_nickname,
+               u.avatar AS user_avatar
+        FROM post p
+        LEFT JOIN user u ON p.user_id = u.id
+        WHERE p.id = #{postId} AND p.status = 1
+    </select>
+</mapper>

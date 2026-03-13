@@ -1,0 +1,68 @@
+﻿server:
+  port: 8080
+
+spring:
+  application:
+    name: niu-community-backend
+  datasource:
+    url: jdbc:mysql://YOUR_VM_IP:3306/niu_community?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&useSSL=false
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  data:
+    redis:
+      host: YOUR_VM_IP
+      port: 6379
+      password:
+      database: 0
+  mail:
+    host: smtp.qq.com
+    port: 587
+    username: your_email@example.com
+    password: your_mail_auth_code
+    default-encoding: UTF-8
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+  rabbitmq:
+    host: YOUR_VM_IP
+    port: 5672
+    username: guest
+    password: guest
+  elasticsearch:
+    uris: http://YOUR_VM_IP:9200
+    username:
+    password:
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 20MB
+
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**/*.xml
+  type-aliases-package: com.niu.community
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+logging:
+  level:
+    com.niu.community: info
+
+jwt:
+  secret: replace-with-your-jwt-secret-key-at-least-32-bytes
+  expire-hours: 72
+
+app:
+  cors-allowed-origins:
+    - http://localhost:5173
+  upload-dir: uploads
+  websocket-path: /ws
+  message-default-days: 30
+  hot-post-days: 7
+  page-size: 10
+  ai-service-url: http://localhost:8000
+  es-index-name: community_post
