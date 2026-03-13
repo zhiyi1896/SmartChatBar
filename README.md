@@ -1,29 +1,29 @@
 # SmartChatBar
 
-SmartChatBar is a full-stack community project inspired by the Niuke community. It includes a Java backend, a Vue frontend, and a standalone Python AI service.
+SmartChatBar 是一个基于牛客社区思路实现的全栈社区项目，包含 Java 后端、Vue 前端，以及独立的 Python AI 服务。
 
-## Overview
+## 项目简介
 
-This repository contains three main parts:
+这个仓库主要包含三部分：
 
-- `backend`: community backend built with Spring Boot 3 and MyBatis-Plus
-- `frontend`: web UI built with Vue 3, Vite, and Element Plus
-- `python-ai-service`: AI assistant service built with FastAPI and LangChain
+- `backend`：基于 Spring Boot 3 和 MyBatis-Plus 的社区后端
+- `frontend`：基于 Vue 3、Vite、Element Plus 的前端界面
+- `python-ai-service`：基于 FastAPI 和 LangChain 的 AI 助手服务
 
-Core features currently covered by the project include:
+目前项目已经覆盖社区站点的核心能力，包括：
 
-- user registration, login, and logout
-- post creation, comments, and replies
-- likes, follows, notifications, and private messages
-- WebSocket-based realtime messaging
-- hot ranking, search, and UV statistics
-- sensitive word filtering and role-based admin actions
-- RabbitMQ and Elasticsearch integration
-- AI assistant page and standalone AI service
+- 用户注册、登录、登出
+- 发帖、评论、回复
+- 点赞、关注、通知、私信
+- WebSocket 实时消息
+- 热榜、搜索、UV 统计
+- 敏感词过滤与管理员操作
+- RabbitMQ 与 Elasticsearch 集成
+- AI 助手页面与独立 AI 服务
 
-## Tech Stack
+## 技术栈
 
-### Backend
+### 后端
 
 - Java 21
 - Spring Boot 3
@@ -34,7 +34,7 @@ Core features currently covered by the project include:
 - RabbitMQ
 - Elasticsearch
 
-### Frontend
+### 前端
 
 - Vue 3
 - Vite
@@ -42,14 +42,14 @@ Core features currently covered by the project include:
 - Pinia
 - Vue Router
 
-### AI Service
+### AI 服务
 
 - Python 3.12
 - FastAPI
 - LangChain
 - DeepSeek API
 
-## Project Structure
+## 目录结构
 
 ```text
 .
@@ -60,7 +60,7 @@ Core features currently covered by the project include:
 `-- niuke.md
 ```
 
-## Requirements
+## 环境要求
 
 - JDK 21
 - Maven 3.9+
@@ -71,31 +71,31 @@ Core features currently covered by the project include:
 - RabbitMQ
 - Elasticsearch 8.x
 
-## Quick Start
+## 快速开始
 
-### 1. Start middleware
+### 1. 启动中间件
 
-The repository includes a compose file for middleware services:
+项目根目录提供了中间件编排文件：
 
 ```bash
 docker compose -f docker-compose.middleware.yml up -d
 ```
 
-This starts:
+默认会启动：
 
 - MySQL
 - Redis
 - RabbitMQ
 - Elasticsearch
 
-### 2. Start the backend
+### 2. 启动后端
 
 ```bash
 cd backend
 mvn spring-boot:run
 ```
 
-### 3. Start the frontend
+### 3. 启动前端
 
 ```bash
 cd frontend
@@ -103,7 +103,7 @@ npm install
 npm run dev
 ```
 
-### 4. Start the AI service
+### 4. 启动 AI 服务
 
 ```bash
 cd python-ai-service
@@ -112,60 +112,60 @@ python -m venv .venv
 .venv\Scripts\python -m uvicorn app.main:app --host 0.0.0.0 --port 8000
 ```
 
-## Configuration
+## 配置说明
 
-### Backend config
+### 后端配置
 
-Main backend config: [backend/src/main/resources/application.yml](/C:/Users/17431/Desktop/niu/backend/src/main/resources/application.yml)
+后端主配置文件：`backend/src/main/resources/application.yml`
 
-Replace these placeholders with values from your environment:
+你需要根据自己的环境替换这些占位值：
 
 - `YOUR_VM_IP`
 - `your_email@example.com`
 - `your_mail_auth_code`
 - `replace-with-your-jwt-secret-key-at-least-32-bytes`
 
-### AI service config
+### AI 服务配置
 
-Copy [python-ai-service/.env.example](/C:/Users/17431/Desktop/niu/python-ai-service/.env.example) to `python-ai-service/.env`, then fill in the real values.
+复制 `python-ai-service/.env.example` 为 `python-ai-service/.env`，然后填写真实参数。
 
-Important variables:
+重点变量包括：
 
 - `JAVA_API_BASE_URL`
 - `DEEPSEEK_API_KEY`
 - `DEEPSEEK_BASE_URL`
 - `DEEPSEEK_MODEL`
 
-## Database Initialization
+## 数据库初始化
 
-Initialization SQL: [backend/src/main/resources/schema.sql](/C:/Users/17431/Desktop/niu/backend/src/main/resources/schema.sql)
+初始化 SQL 位于 `backend/src/main/resources/schema.sql`。
 
-Create the database first, then run this script.
+创建数据库后执行该脚本即可。
 
-## Current Status
+## 当前状态
 
-The repository is ready for local integration and continued development:
+项目当前适合继续做本地联调和功能完善：
 
-- backend compiles
-- frontend builds
-- AI service dependency setup is in place
-- real runtime still requires local environment values and middleware connectivity
+- 后端可编译
+- 前端可构建
+- AI 服务依赖结构已就绪
+- 真正运行仍需要补齐本地环境参数与中间件连接信息
 
-## Repository Cleanup
+## 仓库整理
 
-The repository has already been cleaned up to avoid committing local artifacts:
+仓库已经做过这些清理：
 
-- ignored `node_modules`, `.venv`, `dist`, `__pycache__`, and similar generated files
-- kept local `.env` files out of version control
-- removed tracked Python bytecode cache files
+- 忽略 `node_modules`、`.venv`、`dist`、`__pycache__` 等本地产物
+- 不提交本地 `.env` 文件
+- 已移除 Python 字节码缓存文件
 
-## Notes
+## 注意事项
 
-- current configuration files still contain placeholders and sample values
-- do not use the current config directly for production
-- if your middleware runs in a VM, use the VM IP instead of `localhost`
-- the AI service requires a real `DEEPSEEK_API_KEY`
+- 当前配置文件里仍然有占位符和示例值
+- 不建议直接把当前配置用于生产环境
+- 如果中间件运行在虚拟机中，配置里要使用虚拟机 IP，而不是 `localhost`
+- AI 服务需要填写真实 `DEEPSEEK_API_KEY`
 
 ## License
 
-No license has been added yet. If you plan to open source this project, adding `MIT` or `Apache-2.0` is a good next step.
+当前还没有添加开源许可证。如果你准备公开开源，建议补充 `MIT` 或 `Apache-2.0`。
