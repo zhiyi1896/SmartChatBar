@@ -1,0 +1,75 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="160" y1="80" x2="1420" y2="820" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F8F1E7"/>
+      <stop offset="1" stop-color="#EAD8C1"/>
+    </linearGradient>
+    <linearGradient id="brand" x1="285" y1="190" x2="1200" y2="720" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#C96D44"/>
+      <stop offset="1" stop-color="#8E3B1E"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="1090" y1="200" x2="1290" y2="420" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F4C67A"/>
+      <stop offset="1" stop-color="#D79B4A"/>
+    </linearGradient>
+    <filter id="shadow" x="205" y="127" width="1190" height="646" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset dy="20"/>
+      <feGaussianBlur stdDeviation="24"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.31 0 0 0 0 0.19 0 0 0 0 0.08 0 0 0 0.16 0"/>
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1_2"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1_2" result="shape"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <circle cx="190" cy="120" r="220" fill="#F3D9A9" fill-opacity="0.45"/>
+  <circle cx="1430" cy="780" r="250" fill="#D68863" fill-opacity="0.12"/>
+  <circle cx="1300" cy="150" r="180" fill="#E7B065" fill-opacity="0.25"/>
+
+  <g filter="url(#shadow)">
+    <rect x="253" y="155" width="1094" height="550" rx="32" fill="#FFF9F1"/>
+  </g>
+
+  <rect x="253" y="155" width="1094" height="72" rx="32" fill="#F7EADB"/>
+  <circle cx="305" cy="191" r="10" fill="#E28A66"/>
+  <circle cx="337" cy="191" r="10" fill="#E8BA62"/>
+  <circle cx="369" cy="191" r="10" fill="#8DBE7A"/>
+
+  <rect x="287" y="267" width="250" height="404" rx="26" fill="url(#brand)"/>
+  <text x="327" y="332" fill="#FFF8F0" font-size="42" font-family="Segoe UI, Arial, sans-serif" font-weight="700">Smart</text>
+  <text x="327" y="380" fill="#FFF8F0" font-size="42" font-family="Segoe UI, Arial, sans-serif" font-weight="700">ChatBar</text>
+  <text x="327" y="434" fill="#F6D7C5" font-size="22" font-family="Segoe UI, Arial, sans-serif">Community + AI assistant</text>
+
+  <rect x="327" y="490" width="170" height="18" rx="9" fill="#F2C6A7" fill-opacity="0.65"/>
+  <rect x="327" y="526" width="142" height="18" rx="9" fill="#F2C6A7" fill-opacity="0.52"/>
+  <rect x="327" y="562" width="186" height="18" rx="9" fill="#F2C6A7" fill-opacity="0.4"/>
+
+  <rect x="585" y="267" width="470" height="190" rx="28" fill="#FFF4E8" stroke="#E8D3BE"/>
+  <text x="621" y="325" fill="#2E231A" font-size="30" font-family="Segoe UI, Arial, sans-serif" font-weight="700">Forum Dashboard</text>
+  <rect x="621" y="353" width="150" height="14" rx="7" fill="#C96D44" fill-opacity="0.24"/>
+  <rect x="621" y="392" width="378" height="20" rx="10" fill="#F1E0CD"/>
+  <rect x="621" y="425" width="332" height="20" rx="10" fill="#F1E0CD"/>
+
+  <rect x="1085" y="267" width="218" height="190" rx="28" fill="url(#gold)"/>
+  <text x="1120" y="325" fill="#6C3A0F" font-size="28" font-family="Segoe UI, Arial, sans-serif" font-weight="700">AI</text>
+  <text x="1120" y="364" fill="#6C3A0F" font-size="24" font-family="Segoe UI, Arial, sans-serif">Ask, search,</text>
+  <text x="1120" y="398" fill="#6C3A0F" font-size="24" font-family="Segoe UI, Arial, sans-serif">summarize</text>
+  <rect x="1120" y="425" width="118" height="14" rx="7" fill="#9A551C" fill-opacity="0.22"/>
+
+  <rect x="585" y="485" width="344" height="156" rx="26" fill="#FFFFFF" stroke="#E8D3BE"/>
+  <text x="621" y="537" fill="#2E231A" font-size="26" font-family="Segoe UI, Arial, sans-serif" font-weight="700">Messages</text>
+  <rect x="621" y="565" width="244" height="16" rx="8" fill="#ECD8C5"/>
+  <rect x="621" y="595" width="178" height="16" rx="8" fill="#ECD8C5"/>
+  <rect x="621" y="548" width="18" height="18" rx="9" fill="#C96D44" fill-opacity="0.55"/>
+
+  <rect x="959" y="485" width="344" height="156" rx="26" fill="#FFFFFF" stroke="#E8D3BE"/>
+  <text x="995" y="537" fill="#2E231A" font-size="26" font-family="Segoe UI, Arial, sans-serif" font-weight="700">Trending</text>
+  <rect x="995" y="565" width="262" height="16" rx="8" fill="#ECD8C5"/>
+  <rect x="995" y="595" width="214" height="16" rx="8" fill="#ECD8C5"/>
+  <circle cx="1245" cy="530" r="28" fill="#B4532B"/>
+  <text x="1235" y="538" fill="#FFF6ED" font-size="20" font-family="Segoe UI, Arial, sans-serif" font-weight="700">1</text>
+
+  <text x="252" y="808" fill="#6E5A47" font-size="28" font-family="Segoe UI, Arial, sans-serif" font-weight="600">Illustration preview for GitHub README</text>
+</svg>
