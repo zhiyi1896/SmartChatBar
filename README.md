@@ -174,6 +174,3 @@ python -m venv .venv
 - 如果中间件运行在虚拟机中，配置里要使用虚拟机 IP，而不是 `localhost`
 - AI 服务需要填写真实 `DEEPSEEK_API_KEY`
 
-## License
-
-当前还没有添加开源许可证。如果你准备公开开源，建议补充 `MIT` 或 `Apache-2.0`。
